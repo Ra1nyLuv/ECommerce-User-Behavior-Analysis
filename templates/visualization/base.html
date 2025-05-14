@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}大数据分析可视化平台{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #343a40;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .nav-link {
+            color: #f8f9fa;
+        }
+        .nav-link:hover {
+            color: #ffffff;
+            background-color: #495057;
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .chart-container {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .card {
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">大数据分析可视化平台</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'top_items' %}">Top 10 商品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'monthly_trend' %}">月度趋势</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'category_distribution' %}">分类分布</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'conversion_funnel' %}">转化漏斗</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'hourly_trend' %}">小时活跃度</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'user_clusters' %}">用户分群</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">© 2025 大数据分析可视化平台 | 基于PySpark和Django开发</p>
+            <p class="text-muted">© 数据225 陈俊霖 202212904506</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'visualization/base.html' %}
+
+{% block title %}{{ title }} - 大数据分析可视化平台{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="mb-4">{{ title }}</h2>
+        <div class="chart-container bg-white">
+            {{ chart_content|safe }}
+        </div>
+        <div class="mt-4">
+            <a href="{% url 'index' %}" class="btn btn-secondary">返回首页</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

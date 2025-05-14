@@ -1,0 +1,76 @@
+{% extends 'visualization/base.html' %}
+
+{% block title %}大数据分析可视化平台 - 首页{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">电商用户行为大数据分析平台</h1>
+                <p class="col-md-8 fs-4">基于PySpark的大规模数据处理与可视化分析，深入挖掘用户行为模式与商品销售趋势。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Top 10 商品</h5>
+                <p class="card-text">展示销量最高的10个商品，直观了解热销产品。</p>
+                <a href="{% url 'top_items' %}" class="btn btn-primary">查看详情</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">月度购买趋势</h5>
+                <p class="card-text">分析月度销售趋势，把握销售周期性变化。</p>
+                <a href="{% url 'monthly_trend' %}" class="btn btn-primary">查看详情</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">商品分类分布</h5>
+                <p class="card-text">展示各商品分类的销售占比，了解产品结构。</p>
+                <a href="{% url 'category_distribution' %}" class="btn btn-primary">查看详情</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">用户行为转化漏斗</h5>
+                <p class="card-text">分析用户从浏览到购买的转化过程，优化销售路径。</p>
+                <a href="{% url 'conversion_funnel' %}" class="btn btn-primary">查看详情</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">小时级活跃度</h5>
+                <p class="card-text">分析用户活跃时段，把握最佳营销时机。</p>
+                <a href="{% url 'hourly_trend' %}" class="btn btn-primary">查看详情</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">用户分群分布</h5>
+                <p class="card-text">基于用户行为特征进行分群，实现精准营销。</p>
+                <a href="{% url 'user_clusters' %}" class="btn btn-primary">查看详情</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
